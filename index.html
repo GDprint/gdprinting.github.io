@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hy">
+
+<head>
+<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>GDprinting</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<!-- Favicons -->
+	<link href="assets/img/logo-icon.png" rel="icon">
+	<link href="assets/img/logo-icon.png" rel="apple-touch-icon">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect">
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+	<!-- Main CSS File -->
+	<link href="assets/css/main.css" rel="stylesheet">
+</head>
+<style>
+	body {
+		font-family: 'Arial', sans-serif;
+		background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg);
+		background-size: cover;
+		background-position: center center;
+		margin: 0;
+		padding: 0;
+		height: 100vh;
+		width: 100%;
+		
+		
+	}
+
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.6);
+		padding: 0px;
+	}
+
+	.modal-content {
+		background-color: #fff;
+		
+		margin: 0px auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 100%;
+		max-width: 500px;
+		
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.close-btn {
+		color: #aaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close-btn:hover,
+	.close-btn:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	h1 {
+		text-align: center;
+		color: #000;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+
+	p {
+		font-weight: 500;
+		color: #000;
+		font-size: 1em;
+	}
+
+	h2 {
+		font-weight: bolder;
+		color: #333;
+		margin-top: 10px;
+		font-size: 1.2em;
+	}
+
+	.terms-content {
+		margin-top: 15px;
+		max-height: 300px;
+		overflow-y: auto;
+	}
+
+	.form-group {
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+	}
+
+	input[type="checkbox"] {
+		margin-right: 10px;
+		transform: scale(1.2);
+	}
+
+	.submit-btn {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		background-color: #000;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		margin-top: 20px;
+	}
+
+	.submit-btn:hover {
+		background-color: #444;
+	}
+
+	@media (max-width: 600px) {
+		.modal-content {
+			padding: 15px;
+		}
+
+		h1 {
+			font-size: 1.5em;
+		}
+
+		h2 {
+			font-size: 1.1em;
+		}
+
+		p,
+		.submit-btn {
+			font-size: 0.9em;
+		}
+	}
+
+</style>
+
+<body>
+	<!-- Modal -->
+	<div id="termsModal" class="modal">
+		<div class="modal-content">
+			<span style="opacity: 0;" class="close-btn">&times;</span>
+			<h1>Կայքի Օգտագործման ԵՎ Ծառայությունների Կանոններ</h1>
+			<p>Խնդրում ենք կարդալ մեր կանոնները և պայմանները, նախքան մեր կայքը և ծառայությունները օգտագործելը:</p>
+
+			<div class="terms-content">
+				<h2>1. Ընդհանուր Պայմաններ</h2>
+				<p>Օգտագործելով այս կայքը, դուք ընդունում եք հետևյալ պայմանները և պարտականությունները:</p>
+
+				<h2>2. Օգտագործման Կանոններ</h2>
+				<p>&#8226; Մեր կայքը պետք է օգտագործեք համաձայն մեր կանոնների և բոլոր կիրառելի օրենքների:</p>
+				<p>&#8226; Պատվերը ենթակա է կատարման միայն ամբողջական գումարը վճարելուց հետո:  </p>
+				<p>&#8226; Սույն կանոնով պատվերի համախառն արժեքը պատվիրատուն պարտավոր է վճարել պատվերի գրանցումից ոչ ուշ քան 1 ժամվա ընդացգում:</p>
+					
+				<h2>3. Մտավոր Սեփականություն</h2>
+				<p>Այս կայքի բովանդակությունը պատկանում է մեզ և պաշտպանված է հեղինակային իրավունքով, այս կանոնը խախտելը առաջացնում է տուգանք 100.000դր - 250.000դր:</p>
+
+				<h2>4. Պատասխանատվություն</h2>
+				<p>Մենք պատասխանատվություն չենք կրում կայքի կամ ծառայությունների սխալ օգտագործման հետևանքով առաջացած վնասների համար:</p>
+				
+				<h2>5. Պատվիրատուն իրավունք ունի`</h2>
+
+                <p>&#8226; Ցանկացած ժամանակ ստուգել Կատարողի Ծառայությունների ընթացքը և որակը` առանց միջամտելու նրա գործունեությանը,</p>
+                <p>&#8226; Ցանկացած ժամանակ հրաժարվել պայմանագիրը կատարելուց` Կատարողին վճարելով սահմանված գնի այն մասը, որը համապատասխանում է մինչև պայմանագրի կատարումից Պատվիրատուի հրաժարման մասին տեղեկություն ստանալը մատուցված Ծառայությունների չափին:</p>
+                <p>&#8226; Պատվիրատուն պարտավոր է Ծառայությունների դիմաց վճարել սույն պայմանագրի 3-րդ կետում նշված կանոնակարգին համապատասխան:</p>
+                <br>
+
+				<h2>6. Կանոնների Փոփոխություններ</h2>
+				<p>&#8226; Մենք կարող ենք փոփոխել կանոնները ցանկացած ժամանակ: Ձեր շարունակական օգտագործումը կնշանակի համաձայնություն նոր պայմաններին:</p>
+			</div>
+
+			<form id="regulations-form">
+				<div class="form-group">
+					<input type="checkbox" id="agree" required>
+					<label for="agree">Համաձայն եմ Կանոններին և Պայմաններին</label>
+				</div>
+				<button type="submit" class="submit-btn">Հաստատել և Մուտք Գործել</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		
+
+	</script>
+	
+	<!-- Preloader -->
+<!--<div id="preloader"></div>-->
+
+	<!-- Vendor JS Files -->
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/php-email-form/validate.js"></script>
+	<script src="assets/vendor/aos/aos.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!--
+	 Main JS File 
+	<script src="assets/js/main.js"></script>
+-->
+	<script>
+		window.onload = function() {
+			// Display the modal
+			var modal = document.getElementById("termsModal");
+			modal.style.display = "block";
+
+			// Close the modal when the user clicks on the "X" button
+			var closeBtn = document.getElementsByClassName("close-btn")[0];
+			closeBtn.onclick = function() {
+				modal.style.display = "none";
+			}
+
+			// Close the modal when the user clicks anywhere outside of the modal
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+
+			// Form submission handling
+			document.getElementById('regulations-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+
+				if (document.getElementById('agree').checked) {
+					alert('Շնորհակալություն: Դուք հաջողությամբ մուտք եք գործում կայք.');
+					modal.style.display = "none";
+					// Redirect to homepage or allow access
+					window.location.href = 'home.html'; // փոխեք դեպի իրական գլխավոր էջի հղումը
+				} else {
+					alert('Դուք պետք է համաձայնվեք կանոններին, նախքան կայք մուտք գործելը.');
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
